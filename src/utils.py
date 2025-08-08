@@ -114,7 +114,7 @@ def heatmap_correlation(dataframe):
     # Dibujar heatmap
     sns.heatmap(corr, mask=mask, annot=True, fmt=".2f", cmap='coolwarm', square=True, linewidths=0.5, cbar_kws={"shrink": .5})
 
-    plt.title('Mapaa de correlación')
+    plt.title('Mapa de correlación')
     plt.show()
 #---------------------------------------------------------------------------------------------------
 #ANALISIS VARIABLES CATEGORICAS
@@ -167,7 +167,7 @@ def correlation_num_target(dataframe, target):
     plt.show()
 
     #-------------------------------------------------------------
-# CREACION DE LOS DATAFRAME
+# CREACION DE LOS DATAFRAME 
 def process_dataframes_shapes(dataframe, target):
    
     # 1. total_data: dataset original
@@ -246,6 +246,7 @@ def process_dataframes_shapes(dataframe, target):
         'total_data_factorized_minmax': total_data_factorized_minmax.shape,
         'total_data_no_outliers_factorized_minmax': total_data_no_outliers_factorized_minmax.shape
     }
+
 #-------------------------------------------------------------------------
 # DATASET TRAIN/TEST SPLITS
 
