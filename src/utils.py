@@ -106,7 +106,7 @@ def heatmap_correlation(dataframe):
 
     # Crear máscara para la mitad inferior
      # mask = np.tril(np.ones_like
-    mask = np.tril(np.ones_like(corr, dtype=bool))
+    mask = np.triu(np.ones_like(corr, dtype=bool))
    
     # Configurar tamaño del gráfico
     plt.figure(figsize=(10, 8))
@@ -167,3 +167,19 @@ def correlation_num_target(dataframe, target):
     plt.show()
 
     #-------------------------------------------------------------
+#ARBOL DESICIONES
+def plot_parallel_coordinates(data, target_col, colors=("#E58139", "#39E581","#E58139", "#39E581", "#8139E5")):
+    """
+    Grafica coordenadas paralelas para un DataFrame dado, usando la columna target_col como clase.
+    Las etiquetas del eje x se rotan a 45 grados para mejor visualización.
+
+    Parámetros:
+    - data: pd.DataFrame con las características y la columna target_col.
+    - target_col: str, nombre de la columna objetivo/clase.
+    - colors: tuple, colores para las clases (opcional).
+
+    """
+    df_plot = data.copy()
+    pd.plotting.parallel_coordinates(df_plot, target_col, color=colors)
+    plt.xticks(rotation=45)
+    plt.show()
